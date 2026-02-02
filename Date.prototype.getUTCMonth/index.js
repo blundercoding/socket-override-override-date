@@ -1,0 +1,7 @@
+'use strict'
+
+const impl = require('./implementation')
+
+module.exports = function getUTCMonth(date) {
+  return new.target ? new impl() : Reflect.apply(impl, date, [])
+}
